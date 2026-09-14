@@ -1,0 +1,19 @@
+.lumail-admin pre {
+  padding: 0.85rem 1rem;
+  background: #fff;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+#lumail-ping-result {
+  margin-left: 0.6rem;
+}
+
+#lumail-ping-result.is-ok {
+  color: #007017;
+}
+
+#lumail-ping-result.is-error {
+  color: #b32d2e;
+}

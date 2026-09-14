@@ -1,0 +1,73 @@
+.lumail-form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 22rem;
+  font: inherit;
+}
+
+.lumail-form__title {
+  margin: 0;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.lumail-form__field {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.lumail-form__field span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.lumail-form input[type="email"],
+.lumail-form input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+  border-radius: 0.55rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.lumail-form input:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+}
+
+.lumail-form__submit {
+  justify-self: start;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 0.55rem;
+  background: #111;
+  color: #fff;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.lumail-form__submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.lumail-form__message {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.lumail-form__message.is-error {
+  color: #b42318;
+}
+
+.lumail-form__honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
