@@ -4,8 +4,9 @@ Install Lumail's agent skills or connect [Lumail](https://lumail.io) to Claude
 Code and Codex. The repository includes reusable marketing and copywriting
 skills alongside the Lumail CLI and OAuth MCP plugin skills.
 
-Authentication is browser OAuth. **There is no API token to create, paste, or
-store.**
+Agent plugins authenticate with browser OAuth. **Those sessions have no API
+token to create, paste, or store.** The WordPress plugin in `wordpress/` is
+the exception: it uses a `lum_` organization token on the server.
 
 ## Install
 
@@ -42,6 +43,7 @@ Full guides: [docs/claude-code-install.md](./docs/claude-code-install.md) ·
 
 | Path                                | What it is                                                     |
 | ----------------------------------- | -------------------------------------------------------------- |
+| `wordpress/`                        | WordPress plugin — `[lumail_form]` → Lumail subscribers        |
 | `.claude-plugin/marketplace.json`   | Claude Code marketplace descriptor                             |
 | `claude/.claude-plugin/plugin.json` | Claude Code plugin, declares the MCP server inline             |
 | `codex/.codex-plugin/plugin.json`   | Codex plugin metadata                                          |
@@ -93,6 +95,13 @@ npx lumail auth login
 ```
 
 The `lumail` skill in this repository teaches agents the whole CLI.
+
+## WordPress plugin
+
+`wordpress/` is a PHP plugin: settings page for a `lum_` token, shortcode
+`[lumail_form]`, server-side `POST /api/v2/subscribers`. Copy the folder to
+`wp-content/plugins/lumail`. Details: [wordpress/README.md](./wordpress/README.md)
+and [wordpress/BUILD.md](./wordpress/BUILD.md).
 
 ## Example prompts
 
